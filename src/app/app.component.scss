@@ -1,0 +1,17 @@
+
+.scroll-top-button {
+    opacity: 0;  /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;  /* Smooth transition for appearance */
+  }
+  
+  .scroll-top-button:hover {
+    background-color: #4b5563;  /* A slightly lighter hover color */
+  }
+  
+  .opacity-100 {
+    opacity: 1;
+  }
+  
+  .opacity-0 {
+    opacity: 0;
+  }

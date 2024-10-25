@@ -1,0 +1,22 @@
+<div *ngIf="!deleteCard" class=" rounded-lg shadow-md ">
+    <div class="relative">
+        <div class="overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 rounded-xl">
+            <img [src]="imagePathUrl" alt="Movie Poster" class=" h-[450px] w-full object-cover " />
+        </div>
+      <div class="absolute top-2 right-2">
+        <button  *ngIf="currentRoute === 'search'" [matTooltip]="isFavorite ? 'Remove from favorites' : 'Add to favorites'" (click)="addToFavorite()" [ngStyle]="{color: isFavorite ? 'red' : ''}" class="bg-yellow-500 p-2 rounded-full "  >
+            <mat-icon >favorite</mat-icon>
+        </button>
+        <button  *ngIf="currentRoute === 'favorites'" matTooltip="Delete from favorites" (click)="deleteFromFavorite()"  class="bg-yellow-500 p-2 text-red-600 rounded-full "  >
+            <mat-icon >delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="p-4">
+      <div class="flex justify-between">
+        <span class="text-lg font-semibold truncate">{{title}}</span>
+        <span class="bg-yellow-400 dark:bg-transparent text-black dark:text-yellow-400 border dark:border-yellow-400 px-2 py-1 ">{{rating}}</span>
+      </div>
+      <span class="text-gray-400">{{releaseYear}}</span>
+    </div>
+  </div>

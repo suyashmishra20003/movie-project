@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body { height: 100%; transition: background-color 0.5s, color 0.5s;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow: hidden;}
+
+input:focus {
+    outline: none
+}
+
+input{
+    @apply border-2 border-gray-500
+}
+
+
+// Apply light theme by default
+
+.dark{
+    @apply bg-gradient-to-tr from-gray-950 via-indigo-950 to-gray-950 text-white;
+
+    input{
+        @apply bg-gray-700 border-none
+    }
+}
+// cyan
+// indigo

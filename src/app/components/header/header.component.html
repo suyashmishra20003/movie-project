@@ -1,0 +1,29 @@
+<header class="bg-gradient-to-r from-sky-300 to-blue-300 text-gray-800 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-gray-950 dark:to-indigo-950 dark:text-white dark:bg-transparent shadow p-4 dark:border-b-2 dark:border-gray-700">
+    <div class="container mx-auto flex  md:flex-row justify-between">
+      
+      <div class="flex items-center space-x-2">
+        <span class="text-xl bg-yellow-400 p-2 rounded-md text-black  font-extrabold">Smdb</span>
+      </div>
+      
+      <div class="flex items-center mt-4 md:mt-0">
+        
+        <button (click)="toggleDarkMode()" [matTooltip]="isDarkMode ? 'Light Mode' : 'Dark Mode' " class="bg-yellow-400 p-2 rounded-md text-black  font-extrabold focus:outline-none">
+          @if (isDarkMode) {
+            <mat-icon aria-hidden="false" aria-label="Example wb_sunny icon" fontIcon="wb_sunny"></mat-icon>
+          }@else{
+            <mat-icon aria-hidden="false" aria-label="Example dark_mode icon" fontIcon="dark_mode"></mat-icon>
+          }
+        </button>
+        <button [matTooltip]="showFavorite ? 'Search' : ' Show Favorites' " (click)="routeTemplateHandler()"  class="bg-yellow-400 p-2 ml-1 rounded-md text-black  font-extrabold focus:outline-none">
+          @if(showFavorite){
+            <mat-icon aria-hidden="false" aria-label="Example search icon" fontIcon="search"></mat-icon>
+          }@else{
+            <mat-icon aria-hidden="false" aria-label="Example bookmark_heart icon" fontIcon="bookmark_heart"></mat-icon>
+          }
+        </button>   
+      </div>
+      
+    </div>
+  
+    
+  </header>
