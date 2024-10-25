@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     const clientHeight = panel.clientHeight;
 
     // If scrolled to the bottom, show the button
-    if (scrollPosition + clientHeight >= scrollHeight - 2150) {
+    if (scrollPosition + clientHeight >= scrollHeight - 350) {
       this.showScrollButton = true;
     } else {
       this.showScrollButton = false;
