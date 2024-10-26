@@ -110,7 +110,7 @@
         <!-- Load More Button -->
         <div class="w-full flex justify-center">
             @if (movies.length > 0 && hasMorePages) {
-                <div class="w-full flex justify-center">
+                <div class="w-full flex my-4 justify-center">
                     <button 
                         (click)="loadMore()" 
                         [disabled]="isLoading"
