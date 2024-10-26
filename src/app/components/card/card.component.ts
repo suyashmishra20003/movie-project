@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MovieService } from '../../services/movie.service';
 import { CardData } from '../../interface/movie.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -36,7 +36,8 @@ export class CardComponent implements OnChanges,OnInit {
   currIndex:number = 0
   deleteCard:boolean = false
   constructor(private movieService:MovieService,
-    private activeRoute:ActivatedRoute
+    private activeRoute:ActivatedRoute,
+    private router:Router
   ){
     this.activeRoute.url.subscribe((res) => {
       let strArr = res[0].path.split('/')
@@ -99,6 +100,9 @@ export class CardComponent implements OnChanges,OnInit {
     localStorage.setItem('favorite',JSON.stringify(favArr))
     console.log(favArr)
     this.deleteCard = true
+    if (favArr.length == 0) {
+     this.router.navigate(['/search'])
+    }
   }
 
 }
